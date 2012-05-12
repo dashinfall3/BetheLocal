@@ -1,4 +1,14 @@
 BetheLocal::Application.routes.draw do
+  devise_for :businesses
+  resources :businesses
+
+  devise_for :users
+  resources :users
+  #, :only => [:show, :index]
+  #match '/users/:id', :to => 'users#show', :as => :id
+  
+  root :to => "pages#home"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
